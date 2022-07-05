@@ -1,0 +1,11 @@
+  - name : "Gerenciando win-server"
+    hosts: all
+    tasks:
+    
+    - name: Install IIS (Web-Server and Web-Common-Http)
+      #become: true
+      ansible.windows.win_feature:
+        name:
+        - Web-Server
+        - Web-Common-Http
+        state: present
